@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poverty Line Check — Understanding Poverty</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand-group">
+        <span class="sdg-badge">SDG 1</span>
+        <span class="brand-title">Expensify</span>
+      </a>
+      <a href="index.html" class="nav-link">&larr; Back to Home</a>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1>Poverty Line Check</h1>
+    <p>The World Bank sets the extreme poverty line at $2.15 a day &mdash; about &#8377;180. See how a monthly income compares.</p>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tool-card">
+      <div class="card-label">Monthly Income</div>
+      <div class="income-input-wrap">
+        <span>&#8377;</span>
+        <input type="number" id="incomeInput" value="8000" min="0" step="100" oninput="checkPovertyLine()" />
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="balance-label">That works out to</div>
+      <div class="balance-amount state-good" id="dailyAmount">&#8377;267 / day</div>
+
+      <div class="gauge-bar-bg">
+        <div class="gauge-bar-fill" id="gaugeFill"></div>
+        <div class="gauge-marker"></div>
+      </div>
+      <div class="gauge-scale">
+        <span>&#8377;0</span>
+        <span>&#8377;180 poverty line</span>
+        <span>&#8377;350</span>
+      </div>
+
+      <p class="feedback-text" id="verdictMessage">Above the World Bank extreme poverty line.</p>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    SDG 1: No Poverty &mdash; a class awareness project. Data reference: World Bank Poverty and Inequality Platform.
+  </footer>
+
+  <script src="poverty.js"></script>
+</body>
+</html>
